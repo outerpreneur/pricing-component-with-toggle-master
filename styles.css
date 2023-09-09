@@ -1,0 +1,141 @@
+:root {
+  --gradient: to right, hsl(236, 72%, 79%), hsl(237, 63%, 64%);
+
+  /* ### Neutral */
+
+  --Very-Light-Grayish-Blue: hsl(240, 78%, 98%);
+  --Light-Grayish-Blue: hsl(234, 14%, 74%);
+  --Grayish-Blue: hsl(233, 13%, 49%);
+  --Dark-Grayish-Blue: hsl(232, 13%, 33%);
+
+  --font-montserrat: "Montserrat", sans-serif;
+}
+
+body {
+  background: url(./images/bg-top.svg), url(./images/bg-bottom.svg),
+    var(--Very-Light-Grayish-Blue);
+  background-position: top right, bottom left;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--font-montserrat);
+}
+
+.container {
+  max-width: 80%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 4em;
+}
+
+.switch-plans {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.plans > * {
+  border-radius: 1em;
+  padding: 2.5em;
+}
+
+.basic {
+  height: 453px;
+  width: 350px;
+  background-color: #fff;
+  align-self: center;
+}
+
+.professional {
+  height: 501px;
+  width: 350px;
+  background-image: linear-gradient(var(--gradient));
+  color: #fff;
+}
+
+.master {
+  height: 453px;
+  width: 350px;
+  background-color: #fff;
+  align-self: center;
+}
+
+.price-monthly,
+.price-annually {
+  font-size: 72px;
+  font-weight: bold;
+}
+
+/* switch */
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-image: linear-gradient(var(--gradient));
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
