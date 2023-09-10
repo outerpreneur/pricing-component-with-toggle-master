@@ -48,11 +48,35 @@ body {
   padding: 2.5em;
 }
 
+hr {
+  opacity: 30%;
+}
+
+.plans button {
+  width: 100%;
+  margin-top: 1em;
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 1em;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.plans button:hover {
+  background-color: transparent;
+}
+
 .basic {
   height: 453px;
   width: 350px;
   background-color: #fff;
   align-self: center;
+}
+
+.basic button {
+  background-image: linear-gradient(var(--gradient));
+  color: #fff;
 }
 
 .professional {
@@ -62,11 +86,20 @@ body {
   color: #fff;
 }
 
+.professional button {
+  background-color: #fff !important;
+}
+
 .master {
   height: 453px;
   width: 350px;
   background-color: #fff;
   align-self: center;
+}
+
+.master button {
+  background-image: linear-gradient(var(--gradient));
+  color: #fff;
 }
 
 .price-monthly,
@@ -138,4 +171,24 @@ input:checked + .slider:before {
 
 .slider.round:before {
   border-radius: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .plans {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .plans > * {
+    padding: 0 2em;
+  }
+
+  .basic,
+  .professional,
+  .master {
+    width: 100vw;
+  }
+
+  body {
+    height: 100%;
+  }
 }
