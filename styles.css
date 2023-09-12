@@ -215,6 +215,7 @@ input:checked + .slider:before {
   .master {
     width: 100%;
     margin: 0 auto;
+    height: 451px;
   }
 
   hr {
@@ -233,16 +234,7 @@ input:checked + .slider:before {
 /* Add this CSS to your existing styles */
 
 /* Hide the annual prices by default */
+
 #annually-price {
-  display: none;
-}
-
-/* Show the annual prices when the checkbox is checked */
-#price-switch:checked + .switch-plans #annually-price {
-  display: block;
-}
-
-/* Hide the monthly prices when the checkbox is checked */
-#price-switch:checked + .switch-plans #monthly-price {
   display: none;
 }
