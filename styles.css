@@ -63,10 +63,6 @@ hr {
   cursor: pointer;
 }
 
-.plans button:hover {
-  background-color: transparent;
-}
-
 .basic {
   height: 453px;
   width: 350px;
@@ -79,6 +75,13 @@ hr {
   color: #fff;
 }
 
+.basic button:hover {
+  background-image: none;
+  border: 1px solid var(--Grayish-Blue);
+  background-color: transparent;
+  color: var(--Grayish-Blue);
+}
+
 .professional {
   height: 501px;
   width: 350px;
@@ -87,7 +90,13 @@ hr {
 }
 
 .professional button {
-  background-color: #fff !important;
+  background-color: #fff;
+}
+
+.professional button:hover {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
 }
 
 .master {
@@ -100,6 +109,13 @@ hr {
 .master button {
   background-image: linear-gradient(var(--gradient));
   color: #fff;
+}
+
+.master button:hover {
+  background-image: none;
+  border: 1px solid var(--Grayish-Blue);
+  background-color: transparent;
+  color: var(--Grayish-Blue);
 }
 
 .price-monthly,
@@ -174,21 +190,59 @@ input:checked + .slider:before {
 }
 
 @media only screen and (max-width: 600px) {
+  body {
+    height: 100%;
+  }
+
+  .container {
+    margin: 2em 0;
+    width: 90%;
+    max-width: none;
+  }
   .plans {
     grid-template-columns: repeat(1, 1fr);
+    gap: 2em;
+    width: 100%;
   }
 
   .plans > * {
-    padding: 0 2em;
+    width: 100%;
+    padding: 0;
   }
 
   .basic,
   .professional,
   .master {
-    width: 100vw;
+    width: 100%;
+    margin: 0 auto;
   }
 
-  body {
-    height: 100%;
+  hr {
+    width: 80%;
   }
+
+  .basic button,
+  .professional button,
+  .master button {
+    width: 80%;
+  }
+}
+
+/* show prices */
+
+/* Add this CSS to your existing styles */
+
+/* Hide the annual prices by default */
+#annually-price {
+  display: none;
+}
+
+/* Show the annual prices when the checkbox is checked */
+#price-switch:checked + .switch-plans #annually-price {
+  display: block;
+}
+
+/* Hide the monthly prices when the checkbox is checked */
+#price-switch:checked + .switch-plans #monthly-price {
+  display: none;
 }

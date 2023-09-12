@@ -28,21 +28,25 @@
       <div class="pricing-interval">
         <h1>Our Pricing</h1>
         <div class="switch-plans">
-          <span>Annually</span>
+          <span id="annually">Annually</span>
 
           <label class="switch">
-            <input type="checkbox" />
+            <input type="checkbox" id="price-switch" />
             <span class="slider round"></span>
           </label>
-          <span>Monthly</span>
+          <span id="monthly">Monthly</span>
         </div>
       </div>
 
       <div class="plans">
         <div class="basic">
           <h3>Basic</h3>
-          <span class="price-monthly">&dollar;19.99</span>
-          <span class="price-annually">&dollar;199.99</span>
+          <div class="price-container">
+            <span class="price-monthly" id="monthly-price">&dollar;19.99</span>
+            <span class="price-annually" id="annually-price"
+              >&dollar;199.99</span
+            >
+          </div>
           <hr />
           <p>500 GB Storage</p>
           <hr />
@@ -50,12 +54,16 @@
           <hr />
           <p>Send up to 3 GB</p>
           <hr />
-          <button>Learn more</button>
+          <button class="button-basic">Learn more</button>
         </div>
         <div class="professional">
           <h3>Professional</h3>
-          <span class="price-monthly">&dollar;24.99</span>
-          <span class="price-annually">&dollar;249.99</span>
+          <div class="price-container">
+            <span class="price-monthly" id="monthly-price">&dollar;24.99</span>
+            <span class="price-annually" id="annually-price"
+              >&dollar;249.99</span
+            >
+          </div>
           <hr />
           <p>1 TB Storage</p>
           <hr />
@@ -67,8 +75,12 @@
         </div>
         <div class="master">
           <h3>Master</h3>
-          <span class="price-monthly">&dollar;39.99</span>
-          <span class="price-annually">&dollar;399.99</span>
+          <div class="price-container">
+            <span class="price-monthly" id="monthly-price">&dollar;39.99</span>
+            <span class="price-annually" id="annually-price"
+              >&dollar;399.99</span
+            >
+          </div>
           <hr />
           <p>2 TB Storage</p>
           <hr />
